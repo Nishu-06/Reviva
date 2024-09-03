@@ -451,8 +451,7 @@ input[type=submit]:hover {
     flex: 1;
 }
 
-
-/*gallery*/
+/gallery/
 
 section#gallery {
     margin: 100px 0px;
@@ -502,34 +501,102 @@ section#gallery {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 10px; /* This reduces the gap between the images */
+}
+#ok {
+    color: #343a40;
+    font-size: 40px;
+    font-weight: 600;
+    padding-bottom: 12px;
 }
 
-.port-image {
-    width: 100%;
+#nice {
+    font-size: 14px;
+    color: #777;
+    font-weight: 400;
+    line-height: 26px;
+    padding-bottom: 5px;
 }
+
+
 
 .gallery_product {
-    margin-bottom: 20px;
+    position: relative; /* Ensure relative positioning for proper caption alignment */
+    text-align: center; /* Center-align text and images */
+}
+
+
+
+/* Container for buttons to ensure proper alignment and spacing */
+.button-container {
+    display: flex;
+    justify-content: space-around; /* Distributes buttons evenly */
+    margin-top: 20px; /* Adds space between images and buttons */
+}
+
+/* Common styles for both buttons */
+/* Container for buttons to ensure proper alignment and spacing */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centers the buttons horizontally */
+    gap: 26px; /* Adds space between the two buttons */
+    margin-top: 20px; /* Adds space between the images and buttons */
+}
+
+/* Common styles for both buttons */
+.btn1, .btn2 {
+    font-size: 18px;
+    border: 2px solid #138808;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    background-color: #ff7722;
+    padding: 10px 30px; /* Adjusts the padding for a smaller button width */
+    cursor: pointer;
+    width: 50%; /* Changed from 50vh to 50% for better centering */
+    margin: 0 auto; /* Centers the button horizontally */
+    transition: all 0.5s ease;
+}
+
+/* Hover state for both buttons */
+.btn1:hover, .btn2:hover {
+    color: #ffffff;
+    background-color: #138808;
+    border-color: #00a8c5;
+}
+
+/* Focus state for both buttons */
+.btn1:focus, .btn2:focus {
+    background-color: #fff;
+    color: #00a8c5;
+    outline: none;
+}
+
+
+.gallery_product {
+    margin-bottom: 10px; /* This reduces the bottom margin of each image container */
     overflow: hidden;
+    flex: 1 1 calc(33.33% - 20px); /* Adjusts the size of each gallery item to maintain a consistent layout */
 }
 
 .gallery_product img {
-    width: 360px;
+    width: 100%;
     height: 300px;
     object-fit: cover;
     transition: all 0.5s ease;
+    /* transform: translateX(-10px); Adjust the value to shift the image to the left */
 }
 
 .gallery_product img:hover {
     background-color: rgba(255, 255, 255, 0.5);
     opacity: 0.7;
-    transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1) translateX(-5px); /* Apply the same shift on hover */
 }
 
 /*holyday-fiji*/
 
 .card {
-  --card-gradient: rgba(0, 0, 0, 0.9);
+  --card-gradient: rgba(0, 0, 0, 0.843);
   /* --card-gradient: #5e9ad9, #e271ad; */
   --card-blend-mode: overlay;
   background-color: #fff;
